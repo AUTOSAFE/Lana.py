@@ -5,7 +5,7 @@ def main():
 	os.system('cls' if os.name == 'nt' else 'clear')
 	print(f"Crown & Trophy Duplicator.")
 	print(f"")
-	print(f"Kalau stuck berarti ke ban")
+	print(f"Kalu stuck tunggu aja")
 	api = "kitkabackend.eastus.cloudapp.azure.com:5010"
 	auth = str(input("Auth Key: "))
 	pos = int(input("""
@@ -14,8 +14,8 @@ def main():
 2 = Round 3 (Eliminated)
 3 = Round 3 (Winner)
 Input: """))
-	dely = float(input("\nDelay ( input Crown): "))
-	thr = int(input("\nThreads ( Default '1' | Send Berapa crown Yang Kamu mau ): "))
+	dely = float(input("\nDelay ( input crown): "))
+	thr = int(input("\nThreads ( Default '1' | Jangan memasukan lebih dari 20K ): "))
 	print("===============STARTING==============="*1)
 	for _ in range(thr):
 	        threading.Thread(target=s).start()
@@ -48,7 +48,7 @@ def s():
                         elif response.text == "SERVER_ERROR":
                                 continue
                         else:
-                                print(f"[{response.status_code}] ini bukan expired Tapi Ban")
+                                print(f"[{response.status_code}] ini bukan expired tunggu")
                         if dely > 0: time.sleep(dely)
                 except Exception as e:
                         pass
