@@ -14,7 +14,7 @@ def main():
 2 = Round 3 (Eliminated)
 3 = Round 3 (Winner)
 Input: """))
-	dely = float(input("\nCrown ( input crown): "))
+	dely = float(input("\nCrown ( input delay): "))
 	thr = int(input("\nThreads ( Default '1' | Massukkan Berapa crown yang kamu mau ): "))
 	print("===============STARTING==============="*1)
 	for _ in range(thr):
