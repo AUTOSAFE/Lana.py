@@ -3,7 +3,7 @@ import requests, threading, datetime, sys, os, time
 def main():
 	global auth, maxerr, api, pos, dely
 	os.system('cls' if os.name == 'nt' else 'clear')
-	print(f"Crown & Trophy Duplicator.")
+	print(f"Script By Zexxy & Lana.")
 	print(f"")
 	print(f"Kalau stuck tunggu aja")
 	api = "kitkabackend.eastus.cloudapp.azure.com:5010"
