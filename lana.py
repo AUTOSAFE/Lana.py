@@ -5,7 +5,7 @@ def main():
 	os.system('cls' if os.name == 'nt' else 'clear')
 	print(f"Crown & Trophy Duplicator.")
 	print(f"")
-	print(f"Kalu stuck tunggu aja")
+	print(f"Kalau stuck tunggu aja")
 	api = "kitkabackend.eastus.cloudapp.azure.com:5010"
 	auth = str(input("Auth Key: "))
 	pos = int(input("""
@@ -14,8 +14,8 @@ def main():
 2 = Round 3 (Eliminated)
 3 = Round 3 (Winner)
 Input: """))
-	dely = float(input("\nDelay ( input crown): "))
-	thr = int(input("\nThreads ( Default '1' | Jangan memasukan lebih dari 20K ): "))
+	dely = float(input("\nCrown ( input crown): "))
+	thr = int(input("\nThreads ( Default '1' | Massukkan Berapa crown yang kamu mau ): "))
 	print("===============STARTING==============="*1)
 	for _ in range(thr):
 	        threading.Thread(target=s).start()
@@ -42,7 +42,7 @@ def s():
                                 sys.stdout.write(f"\r[{dt.hour}:{dt.minute}:{dt.second}] {negara} | Username: {nama} | Trophy: {trophy} | Crowns: {crown}")
                                 sys.stdout.flush()
                         elif response.status_code == 403 and response.text == "BANNED":
-                                print(f"[{dt.hour}:{dt.minute}:{dt.second}] Account get Banned!")
+                                print(f"[{dt.hour}:{dt.minute}:{dt.second}] Auth Expired Buat Baru lagi!")
                                 break
                                 sys.exit(0)
                         elif response.text == "SERVER_ERROR":
