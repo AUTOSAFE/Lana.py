@@ -3,19 +3,19 @@ import requests, threading, datetime, sys, os, time
 def main():
 	global auth, maxerr, api, pos, dely
 	os.system('cls' if os.name == 'nt' else 'clear')
-	print(f"Crown & Trophy.")
+	print(f"Crown & Trophy Duplicator.")
 	print(f"")
-	print(f"Kalu stuck berarti ke ban")
+	print(f"Kalau stuck berarti ke ban")
 	api = "kitkabackend.eastus.cloudapp.azure.com:5010"
 	auth = str(input("Auth Key: "))
 	pos = int(input("""
-0 = Round 1 (MEMEK)
-1 = Round 2 (MEMEK)
-2 = Round 3 (MEMEK)
-3 = Round 3 (KONTOL)
+0 = Round 1 (Eliminated)
+1 = Round 2 (Eliminated)
+2 = Round 3 (Eliminated)
+3 = Round 3 (Winner)
 Input: """))
-	dely = float(input("\nDelay ( input delay): "))
-	thr = int(input("\nThreads ( Default '1' | Silahkan Masukkan Angka Delay ): "))
+	dely = float(input("\nDelay ( input Crown): "))
+	thr = int(input("\nThreads ( Default '1' | Send Berapa crown Yang Kamu mau ): "))
 	print("===============STARTING==============="*1)
 	for _ in range(thr):
 	        threading.Thread(target=s).start()
@@ -42,13 +42,13 @@ def s():
                                 sys.stdout.write(f"\r[{dt.hour}:{dt.minute}:{dt.second}] {negara} | Username: {nama} | Trophy: {trophy} | Crowns: {crown}")
                                 sys.stdout.flush()
                         elif response.status_code == 403 and response.text == "BANNED":
-                                print(f"[{dt.hour}:{dt.minute}:{dt.second}] Auth Telah Expired Silahkan buat Ulang!")
+                                print(f"[{dt.hour}:{dt.minute}:{dt.second}] Account get Banned!")
                                 break
                                 sys.exit(0)
                         elif response.text == "SERVER_ERROR":
                                 continue
                         else:
-                                print(f"[{response.status_code}] ini Bukan Ban Tapi Expired")
+                                print(f"[{response.status_code}] ini bukan expired Tapi Ban")
                         if dely > 0: time.sleep(dely)
                 except Exception as e:
                         pass
