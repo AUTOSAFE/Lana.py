@@ -1,60 +1,57 @@
-#!/usr/bin/bash
+import requests, threading, datetime, sys, os, time
 
-#warna
-default="\033[00m"
-merah="\033[31m"
-hijau="\033[32m"
-kuning="\033[33m"
-biru="\033[34m"
-birumuda="\033[35m"
-ungu="\033[36m"
-putih="\033[37m"
+def main():
+	global auth, maxerr, api, pos, dely
+	os.system('cls' if os.name == 'nt' else 'clear')
+	print(f"Script By Zexxy & Lana.")
+	print(f"")
+	print(f"Kalau stuck tunggu aja")
+	api = "kitkabackend.eastus.cloudapp.azure.com:5010"
+	auth = str(input("Auth Key: "))
+	pos = int(input("""
+0 = Round 1 (Eliminated)
+1 = Round 2 (Eliminated)
+2 = Round 3 (Eliminated)
+3 = Round 3 (Winner)
+Input: """))
+	dely = float(input("\nJumlah ( input delay): "))
+	thr = int(input("\nThreads ( Default '1' | Masukkan Angka 1 jika salah ban ): "))
+	print("===============STARTING==============="*1)
+	for _ in range(thr):
+	        threading.Thread(target=s).start()
 
+def s():
+        global maxerr
+        while True:
+                dt = datetime.datetime.now()
+                try:
+                        headers = {
+                            'authorization': auth,
+                            'use_response_compression': 'true',
+                            'Accept-Encoding': 'gzip',
+                            'Host': api,
+                            'Connection': None,
+                            'User-Agent': None,
+                        }
+                        response = requests.get(f'http://{api}/round/finishv2/{pos}', headers=headers)
+                        if response.status_code == 200:
+                                negara = response.text.split('"Country":')[1].split(',')[0]
+                                nama = response.text.split('"Username":')[1].split(',')[0]
+                                trophy = response.text.split('"SkillRating":')[1].split(',')[0]
+                                crown = response.text.split('"Crowns":')[1].split(',')[0]
+                                sys.stdout.write(f"\r[{dt.hour}:{dt.minute}:{dt.second}] {negara} | Username: {nama} | Trophy: {trophy} | Crowns: {crown}")
+                                sys.stdout.flush()
+                        elif response.status_code == 403 and response.text == "BANNED":
+                                print(f"[{dt.hour}:{dt.minute}:{dt.second}] Auth Expired Buat Baru lagi!")
+                                break
+                                sys.exit(0)
+                        elif response.text == "SERVER_ERROR":
+                                continue
+                        else:
+                                print(f"[{response.status_code}] ini bukan expired tunggu")
+                        if dely > 0: time.sleep(dely)
+                except Exception as e:
+                        pass
 
-clear
-echo
-   echo -e ""  $merah "███╗   ██╗ ██████╗"  $merah "   ██╗     ██╗███╗   ███╗██╗████████╗"
-   echo -e ""  $merah "████╗  ██║██╔═══██╗"  $merah "  ██║     ██║████╗ ████║██║╚══██╔══╝"
-   echo -e ""  $merah "██╔██╗ ██║██║   ██║"  $merah "  ██║     ██║██╔████╔██║██║   ██║"      
-   echo -e ""  $putih "██╔██╗ ██║██║   ██║"  $putih "  ██║     ██║██║╚██╔╝██║██║   ██║"
-   echo -e ""  $putih "██║ ╚████║╚██████╔╝"  $putih "  ███████╗██║██║ ╚═╝ ██║██║   ██║"  
-   echo -e ""  $putih "╚═╝  ╚═══╝ ╚═════╝"     $putih "  ╚══════╝╚═╝╚═╝     ╚═╝╚═╝   ╚═╝"  
- 
-   echo
-   echo -e $kuning" ╔═══════════════════════════════════════════════╗"
-   echo -e $kuning" ║"   "\033[34mAuther    : Lana                       "$kuning"    ║"
-   echo -e $kuning" ║"   "\033[34mTeam      : Zexxy                   "$kuning"    ║"
-   echo -e $kuning" ║"   "\033[32mWA : 088245059338                       "$hijau"    ║"
-   echo -e $kuning" ║"   "\033[34mGithub    : https://github.com/AUTOSAFE     "$kuning"    ║"
-   echo -e $kuning" ╚═══════════════════════════════════════════════╝"
-
-   echo -e $putih
-   echo -e $putih "╔════════════════════════╗"
-   echo -e " ║ " "\033[1;31m By Lana Script" $putih "    ║"
-   echo -e $putih "╚════════════════════════╝"
-
-
-echo  $hijau"Welcome"
-echo  $biru"[1] Script Bussid"
-echo  $ungu"[2] Script Stumble"
-echo  $birumuda"[3] Exit"
-
-
-echo -e -n "pilih > ";read pil
-if [ $pil = "1" ];then
-  git clone https://github.com/KIPASGTS/Mass-cash-bussid &> /dev//null
-  cd Mass-cash-bussid
-  pip install requests
-  python bussid.py
-  echo "Selamat Datang di Script Bussid"
-elif [ $pil = "2" ];then
-  git clone https://github.com/AUTOSAFE/Lana.py &> /dev//null
-  cd lana.py
-  npm i
-  node index
-echo "selamat datang di Kontol Geming"
-elif [ $pil = "3" ];then
-exit
-else
-echo "input salah"
-fi
+if __name__ == "__main__":
+	main()
