@@ -14,8 +14,8 @@ def main():
 2 = Round 3 (Eliminated)
 3 = Round 3 (Winner)
 Input: """))
-	dely = float(input("\nJumlah ( input delay): "))
-	thr = int(input("\nThreads ( Default '1' | Masukkan Angka 1 jika salah ban ): "))
+	dely = float(input("\nJumlah ( Pakai Delay 0.5): "))
+	thr = int(input("\nThreads ( Default '1' | Masukkan Angka 1 jika gak 1 diban ): "))
 	print("===============STARTING==============="*1)
 	for _ in range(thr):
 	        threading.Thread(target=s).start()
@@ -42,13 +42,13 @@ def s():
                                 sys.stdout.write(f"\r[{dt.hour}:{dt.minute}:{dt.second}] {negara} | Username: {nama} | Trophy: {trophy} | Crowns: {crown}")
                                 sys.stdout.flush()
                         elif response.status_code == 403 and response.text == "BANNED":
-                                print(f"[{dt.hour}:{dt.minute}:{dt.second}] Auth Expired Buat Baru lagi!")
+                                print(f"[{dt.hour}:{dt.minute}:{dt.second}] Akun Telah Menerima Hadiah dari Kitkat!")
                                 break
                                 sys.exit(0)
                         elif response.text == "SERVER_ERROR":
                                 continue
                         else:
-                                print(f"[{response.status_code}] ini bukan expired tunggu")
+                                print(f"[{response.status_code}] Ditunggu aja Kok Ini bukan ban")
                         if dely > 0: time.sleep(dely)
                 except Exception as e:
                         pass
