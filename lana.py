@@ -25,14 +25,14 @@ def banner(str):
     os.system("cls||clear")
     __banner__ = pyfiglet.figlet_format(str, font="slant", justify="center")
     print(red + __banner__)
-    print(f"\t\t\t{red}[ {white}Created By RpL-Maulana SINCE 2015 {red}]")
-    print(f"\t\t{red}[ {white}This tools for auto win in game stumble{red} ]\n")
+    print(f"\t\t\t{red}[ {white}Created By : PROJECT EVOLUTION ! {red}]")
+    print(f"\t\t{red}[ {white}This tools for Auto Crown and Trophy games Stumble{red} ]\n")
 
 def start():
-    banner("@RPL•LANA")
-    input_auth = input(f"{red}[{white}?{red}] {white}Enter your auth token : ")
-    round_input = input(f"{red}[{white}?{red}] {white}Enter round (1, 2, 3) : ")
-    delay_input = input(f"{red}[{white}?{red}] {white}Enter Delay (ex: 1 = 1sec) : ")
+    banner("EVOLUTION")
+    input_auth = input(f"{green}[{white}?{cyan}] {white}put in you Authorized : ")
+    round_input = input(f"{green}[{white}?{cyan}] {white}put in you elimited (1, 2, 3) : ")
+    delay_input = input(f"{green}[{white}?{cyan}] {white}Enter How fast is Crown (ex: 1 = 1sec) : ")
 
     while True:
         try:
@@ -41,7 +41,7 @@ def start():
                 "authorization": input_auth
             })
             if "BANNED" in str(req_game.text) or req_game.status_code == 403:
-                print(f"{red}[{yellow}*{red}] {white}Account Got Banned")
+                print(f"{red}[{yellow}*{red}] {green}Account Give Banned")
                 break
             elif "SERVER_ERROR" in str(req_game.text):
                 continue
