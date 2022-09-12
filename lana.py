@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created By X - MrG3P5
+# Created By Project - evolution
 import pyfiglet
 import requests
 import os
@@ -30,9 +30,9 @@ def banner(str):
 
 def start():
     banner("EVOLUTION")
-    input_auth = input(f"{green}[{white}?{blue}] {white}put in you Authorized : ")
-    round_input = input(f"{green}[{white}?{blue}] {white}put in you elimited (1, 2, 3) : ")
-    delay_input = input(f"{green}[{white}?{blue}] {white}Enter How fast is Crown (ex: 1 = 1sec) : ")
+    input_auth = input(f"{green}[{white}?{green}] {white}put in you Authorized : ")
+    round_input = input(f"{green}[{white}?{green}] {white}put in you elimited (1, 2, 3) : ")
+    delay_input = input(f"{green}[{white}?{green}] {white}Enter How fast is Crown (ex: 1 = 1sec) : ")
 
     while True:
         try:
