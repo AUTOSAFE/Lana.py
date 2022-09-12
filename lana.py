@@ -25,8 +25,8 @@ def banner(str):
     os.system("cls||clear")
     __banner__ = pyfiglet.figlet_format(str, font="slant", justify="center")
     print(red + __banner__)
-    print(f"\t\t\t{blue}[ {white}Created By : PROJECT EVOLUTION ! {blue}]")
-    print(f"\t\t{blue}[ {white}This tools for Auto Crown and Trophy games Stumble{blue} ]\n")
+    print(f"\t\t\t{yellow}[ {white}Created By : PROJECT EVOLUTION ! {red}]")
+    print(f"\t\t{yellow}[ {white}This tools for Auto Crown and Trophy games Stumble{red} ]\n")
 
 def start():
     banner("EVOLUTION")
