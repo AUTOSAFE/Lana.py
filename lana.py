@@ -25,14 +25,14 @@ def banner(str):
     os.system("cls||clear")
     __banner__ = pyfiglet.figlet_format(str, font="slant", justify="center")
     print(red + __banner__)
-    print(f"\t\t\t{red}[ {white}Created By X - MrG3P5 Modifed By AstarGans {red}]")
-    print(f"\t\t{red}[ {white}This tools for auto win in game stumble{red} ]\n")
+    print(f"\t\t\t{red}[ {yellow}Created By PROJECT EVOLUTION {red}]")
+    print(f"\t\t{red}[ {yellow}This tools for auto Crown and Trophy game stumble{red} ]\n")
 
 def start():
-    banner("X-Stumble")
-    input_auth = input(f"{red}[{white}?{red}] {white}Enter your auth token : ")
-    round_input = input(f"{red}[{white}?{red}] {white}Enter round (1, 2, 3) : ")
-    delay_input = input(f"{red}[{white}?{red}] {white}Enter Delay (ex: 1 = 1sec) : ")
+    banner("EVOLUTION")
+    input_auth = input(f"{red}[{white}?{green}] {white}Enter your auth token : ")
+    round_input = input(f"{red}[{white}?{green}] {white}Enter round (1, 2, 3) : ")
+    delay_input = input(f"{red}[{white}?{green}] {white}Enter Delay (ex: 1 = 1sec) : ")
 
     while True:
         try:
