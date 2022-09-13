@@ -46,7 +46,7 @@ def start():
             elif "SERVER_ERROR" in str(req_game.text):
                 continue
             elif "User" in str(req_game.text):
-                print(f"{red}[{white}{logTime()}{red}] {green}Nickname: {yellow}{req_game.json()['User']['Username']} {green}| Country: {yellow}{req_game.json()['User']['Country']} {green}| Trophy: {yellow}{req_game.json()['User']['SkillRating']} {green}| Crown: {yellow}{req_game.json()['User']['Crowns']}| EXP: {yellow}{req_game.json()['User']['exp']}")
+                print(f"{red}[{white}{logTime()}{red}] (chalk.green(`[ ${moment().format('HH:mm:ss')} ] Nickname : ${username} | Country : ${country} | ${chalk.blue(`EXP : ${exp}`)} | ${chalk.blue(`Pass Star : ${tokenPass}`)}`));
         except:
             continue
 
