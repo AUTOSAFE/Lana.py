@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Created By AUTOSAFE
+# Created By X - MrG3P5
 import pyfiglet
 import requests
 import os
@@ -25,14 +25,14 @@ def banner(str):
     os.system("cls||clear")
     __banner__ = pyfiglet.figlet_format(str, font="slant", justify="center")
     print(red + __banner__)
-    print(f"\t\t\t{red}[ {yellow}Created By PROJECT EVOLUTION ! {red}]")
-    print(f"\t\t{red}[ {yellow}This tools for auto crown and Trophy game stumble{red} ]\n")
+    print(f"\t\t\t{red}[ {white}Created By X - MrG3P5 Modifed By AstarGans {red}]")
+    print(f"\t\t{red}[ {white}This tools for auto win in game stumble{red} ]\n")
 
 def start():
-    banner("EVOLUTION")
-    input_auth = input(f"{red}[{white}?{red}] {green}put in you Authorized  : ")
-    round_input = input(f"{red}[{white}?{red}] {green}put in you elimited (1, 2, 3) : ")
-    delay_input = input(f"{red}[{white}?{red}] {green}enter crown speed (ex: 1 = 1sec) : ")
+    banner("X-Stumble")
+    input_auth = input(f"{red}[{white}?{red}] {white}Enter your auth token : ")
+    round_input = input(f"{red}[{white}?{red}] {white}Enter round (1, 2, 3) : ")
+    delay_input = input(f"{red}[{white}?{red}] {white}Enter Delay (ex: 1 = 1sec) : ")
 
     while True:
         try:
@@ -46,7 +46,7 @@ def start():
             elif "SERVER_ERROR" in str(req_game.text):
                 continue
             elif "User" in str(req_game.text):
-                print(f"{red}[{white}{logTime()}{red}] {yellow}Nickname: {green}{req_game.json()['User']['Username']} {yellow}| Country: {green}{req_game.json()['User']['Country']} {yellow}| Trophy: {green}{req_game.json()['User']['SkillRating']} {yellow}| Crown: {green}{req_game.json()['User']['Crowns']}")
+                print(f"{red}[{white}{logTime()}{red}] {white}Nickname: {green}{req_game.json()['User']['Username']} {white}| Country: {green}{req_game.json()['User']['Country']} {white}| Trophy: {green}{req_game.json()['User']['SkillRating']} {white}| Crown: {green}{req_game.json()['User']['Crowns']}")
         except:
             continue
 
