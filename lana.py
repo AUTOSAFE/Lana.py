@@ -30,9 +30,9 @@ def banner(str):
 
 def start():
     banner("EVOLUTION")
-    input_auth = input(f"{red}[{white}?{green}] {white}Enter your auth token : ")
-    round_input = input(f"{red}[{white}?{green}] {white}Enter round (1, 2, 3) : ")
-    delay_input = input(f"{red}[{white}?{green}] {white}Enter Delay (ex: 1 = 1sec) : ")
+    input_auth = input(f"{red}[{white}→{white}] {green}Enter your auth token : ")
+    round_input = input(f"{red}[{white}→{white}] {green}Enter round (1, 2, 3) : ")
+    delay_input = input(f"{red}[{white}→{white}] {green}Enter Delay (ex: 1 = 1sec) : ")
 
     while True:
         try:
